@@ -20,9 +20,9 @@ __all__ = [
 
 
 def derive(master: MasterSecret, label: int, index: int, length: int) -> bytes:
-    """Pending behaviour defined by RFC 3711.
+    """Pending behaviour defined by RFC 3711 sec. 4.3.1.
 
     Not implemented yet. See the ``kdf.derive()`` row in ROADMAP.md; this stub raises on
     purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("derive() is not implemented: RFC 3711")
+    raise NotImplementedError("derive() is not implemented: RFC 3711 sec. 4.3.1")

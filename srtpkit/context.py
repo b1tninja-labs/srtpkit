@@ -21,9 +21,9 @@ __all__ = [
 
 
 def for_stream(ssrc: int, keys: SessionKeys) -> StreamContext:
-    """Pending behaviour defined by RFC 3711.
+    """Pending behaviour defined by RFC 3711 sec. 3.2.
 
     Not implemented yet. See the ``context.for_stream()`` row in ROADMAP.md; this stub
     raises on purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("for_stream() is not implemented: RFC 3711")
+    raise NotImplementedError("for_stream() is not implemented: RFC 3711 sec. 3.2")

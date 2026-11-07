@@ -11,22 +11,26 @@ behaviour regressed. Reading the code and agreeing with it is not enough. That i
 Legend: `[ok]` implemented and pinned by a named test -- `[part]` partial, with what is
 missing stated -- `[ ]` not implemented -- `[no]` deliberate non-goal.
 
+A Where cell marked `(to be written)` names the test that will pin the row once it exists; no
+such test has been written yet, and the row cannot leave `[ ]` until it has. The Milestone
+column places the row on the ladder in section 2, and `-` means it is not placed yet.
+
 Update the affected row in the same commit that changes the behaviour. A row and its test
 drift apart within one release, and the document becomes useless exactly when it is needed.
 
 ## 1. Obligations
 
-| Obligation | Spec | Status | Where |
-|---|---|---|---|
-| `params.select_profile()` | RFC 3711, RFC 7714 | `[ ]` | `tests/test_obligations.py::select_profile` |
-| `kdf.derive()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::derive` |
-| `context.for_stream()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::for_stream` |
-| `transform.protect()` | RFC 7714 | `[ ]` | `tests/test_obligations.py::protect` |
-| `transform.unprotect()` | RFC 7714 | `[ ]` | `tests/test_obligations.py::unprotect` |
-| `replay.check()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::check` |
-| `srtcp.protect_rtcp()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::protect_rtcp` |
-| `mki.select_key()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::select_key` |
-| `dtls.export_keys()` | RFC 5764 | `[ ]` | `tests/test_obligations.py::export_keys` |
+| Obligation | Spec | Status | Where | Milestone |
+|---|---|---|---|---|
+| `params.select_profile()` | RFC 3711, RFC 7714 | `[ ]` | `tests/test_obligations.py::test_select_profile` (to be written) | M1 |
+| `kdf.derive()` | RFC 3711 sec. 4.3.1 | `[ ]` | `tests/test_obligations.py::test_derive` (to be written) | M1 |
+| `context.for_stream()` | RFC 3711 sec. 3.2 | `[ ]` | `tests/test_obligations.py::test_for_stream` (to be written) | M1 |
+| `transform.protect()` | RFC 7714 sec. 8 | `[ ]` | `tests/test_obligations.py::test_protect` (to be written) | M2 |
+| `transform.unprotect()` | RFC 7714 sec. 8 | `[ ]` | `tests/test_obligations.py::test_unprotect` (to be written) | M2 |
+| `replay.check()` | RFC 3711 sec. 3.3.2 | `[ ]` | `tests/test_obligations.py::test_check` (to be written) | M3 |
+| `srtcp.protect_rtcp()` | RFC 3711 sec. 3.4 | `[ ]` | `tests/test_obligations.py::test_protect_rtcp` (to be written) | M4 |
+| `mki.select_key()` | RFC 3711 | `[ ]` | `tests/test_obligations.py::test_select_key` (to be written) | M4 |
+| `dtls.export_keys()` | RFC 5764 sec. 4.2 | `[ ]` | `tests/test_obligations.py::test_export_keys` (to be written) | M5 |
 
 ## 2. Milestones
 

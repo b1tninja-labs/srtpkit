@@ -49,6 +49,9 @@ with their line ranges.
 - RFC 3711 (Proposed Standard, 2004-03)
 - RFC 7714 (Proposed Standard, 2015-12)
 - RFC 5764 (Proposed Standard, 2010-05)
+- RFC 5506 (Proposed Standard, 2009-04)
+- RFC 6904 (Proposed Standard, 2013-04)
+- RFC 9335 (Proposed Standard, 2023-01)
 
 ## Traps that have already bitten this portfolio
 

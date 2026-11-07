@@ -21,18 +21,18 @@ __all__ = [
 
 
 def protect(packet: bytes, ctx: StreamContext, aad: bytes) -> bytes:
-    """Pending behaviour defined by RFC 7714.
+    """Pending behaviour defined by RFC 7714 sec. 8.
 
     Not implemented yet. See the ``transform.protect()`` row in ROADMAP.md; this stub
     raises on purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("protect() is not implemented: RFC 7714")
+    raise NotImplementedError("protect() is not implemented: RFC 7714 sec. 8")
 
 
 def unprotect(packet: bytes, ctx: StreamContext) -> bytes:
-    """Pending behaviour defined by RFC 7714.
+    """Pending behaviour defined by RFC 7714 sec. 8.
 
     Not implemented yet. See the ``transform.unprotect()`` row in ROADMAP.md; this stub
     raises on purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("unprotect() is not implemented: RFC 7714")
+    raise NotImplementedError("unprotect() is not implemented: RFC 7714 sec. 8")

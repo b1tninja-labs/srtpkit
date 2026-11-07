@@ -5,6 +5,9 @@
 | RFC 3711 | Proposed Standard | 2004-03 | 2026-11-05 |
 | RFC 7714 | Proposed Standard | 2015-12 | 2026-11-05 |
 | RFC 5764 | Proposed Standard | 2010-05 | 2026-11-05 |
+| RFC 5506 | Proposed Standard | 2009-04 | 2026-11-05 |
+| RFC 6904 | Proposed Standard | 2013-04 | 2026-11-05 |
+| RFC 9335 | Proposed Standard | 2023-01 | 2026-11-05 |
 
 Citation rules, in the order they most often get broken:
 

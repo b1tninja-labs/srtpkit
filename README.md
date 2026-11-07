@@ -45,6 +45,9 @@ document, which is the honest grain size for a plan. See [docs/rfc-map.md](docs/
 | RFC 3711 | Proposed Standard | 2004-03 | SRTP: transforms, the index and ROC, replay and key derivation |
 | RFC 7714 | Proposed Standard | 2015-12 | AES-GCM authenticated encryption in SRTP |
 | RFC 5764 | Proposed Standard | 2010-05 | DTLS handshake to establish SRTP and SRTCP keys |
+| RFC 5506 | Proposed Standard | 2009-04 | reduced-size RTCP, which updates RFC 3711 |
+| RFC 6904 | Proposed Standard | 2013-04 | encryption of RTP header extensions, which updates RFC 3711 |
+| RFC 9335 | Proposed Standard | 2023-01 | complete encryption of header extensions and CSRCs, which updates RFC 3711 |
 
 ### Errata watch
 
@@ -76,7 +79,8 @@ document, which is the honest grain size for a plan. See [docs/rfc-map.md](docs/
 ## Install
 
 ```bash
-git clone https://github.com/b1tninja/srtpkit.cd srtpkit
+git clone https://github.com/b1tninja/srtpkit.git
+cd srtpkit
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\\Scripts\\Activate.ps1
 pip install -e ".[dev]"

@@ -20,9 +20,9 @@ __all__ = [
 
 
 def check(ctx: StreamContext, index: int) -> bool:
-    """Pending behaviour defined by RFC 3711.
+    """Pending behaviour defined by RFC 3711 sec. 3.3.2.
 
     Not implemented yet. See the ``replay.check()`` row in ROADMAP.md; this stub raises
     on purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("check() is not implemented: RFC 3711")
+    raise NotImplementedError("check() is not implemented: RFC 3711 sec. 3.3.2")

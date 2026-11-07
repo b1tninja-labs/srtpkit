@@ -20,9 +20,9 @@ __all__ = [
 
 
 def protect_rtcp(packet: bytes, ctx: Context) -> bytes:
-    """Pending behaviour defined by RFC 3711.
+    """Pending behaviour defined by RFC 3711 sec. 3.4.
 
     Not implemented yet. See the ``srtcp.protect_rtcp()`` row in ROADMAP.md; this stub
     raises on purpose so nothing downstream mistakes it for working code.
     """
-    raise NotImplementedError("protect_rtcp() is not implemented: RFC 3711")
+    raise NotImplementedError("protect_rtcp() is not implemented: RFC 3711 sec. 3.4")
