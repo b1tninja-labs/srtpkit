@@ -12,6 +12,7 @@ from . import (
     cli,
     context,
     dtls,
+    errors,
     gcm,
     index,
     kdf,
@@ -19,6 +20,7 @@ from . import (
     params,
     policy,
     replay,
+    rtp,
     srtcp,
     transform,
 )
@@ -28,7 +30,7 @@ from .kdf import derive
 from .mki import select_key
 from .params import select_profile
 from .replay import check
-from .srtcp import protect_rtcp
+from .srtcp import protect_rtcp, unprotect_rtcp
 from .transform import protect, unprotect
 
 __version__ = "0.1.0"
@@ -42,6 +44,7 @@ __all__ = [
     "context",
     "derive",
     "dtls",
+    "errors",
     "export_keys",
     "for_stream",
     "gcm",
@@ -53,9 +56,11 @@ __all__ = [
     "protect",
     "protect_rtcp",
     "replay",
+    "rtp",
     "select_key",
     "select_profile",
     "srtcp",
     "transform",
     "unprotect",
+    "unprotect_rtcp",
 ]

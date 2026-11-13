@@ -9,7 +9,10 @@
 | RFC 6904 | Proposed Standard | 2013-04 | 2026-11-05 |
 | RFC 9335 | Proposed Standard | 2023-01 | 2026-11-05 |
 | RFC 6188 | Proposed Standard | 2011-03 | 2026-11-13 |
+| RFC 3550 | Internet Standard (STD 64), current; sec. 5.1 and sec. 5.3.1 (the header, CSRC list and header extension) are what `srtpkit/rtp.py` implements | 2003-07 | 2026-11-13 |
 | RFC 5705 | Proposed Standard, updated by RFC 8446, RFC 8447, RFC 9846 | 2010-03 | 2026-11-13 |
+
+Reads of 2026-11-13 for the packet transform: RFC 3711 sec. 3.3 (with 3.3.1 and 3.3.2), sec. 3.4, sec. 4.1.3, sec. 4.2, sec. 4.3; RFC 7714 sec. 8, sec. 9 and sec. 16 (the vectors); RFC 5764 sec. 4.1.2 (profile table) and sec. 4.2 (exporter layout, erratum 4788). Finding: RFC 5764 sec. 4.1.2 gives the NULL profiles a zero-length key and salt, which leaves the HMAC key derivation without a master key (see ROADMAP.md, open questions). RFC 7714 sec. 9.2 and sec. 9.3 put the encrypted ciphertext with its tag before the E-flag and index, and for E=0 the tag alone, which `srtcp` follows.
 
 Citation rules, in the order they most often get broken:
 
