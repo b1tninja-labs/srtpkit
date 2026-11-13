@@ -23,7 +23,9 @@ __all__ = [
 def export_keys(tls_export: bytes, policy: Policy) -> SessionKeys:
     """Pending behaviour defined by RFC 5764 sec. 4.2.
 
-    Not implemented yet. See the ``dtls.export_keys()`` row in ROADMAP.md; this stub
+    Cut for now (ROADMAP.md marks the row ``[no]``): the TLS exporter this takes its input
+    from (RFC 5705) has no standard-library or ``cryptography`` path. Not implemented yet. See
+    the ``dtls.export_keys()`` row in ROADMAP.md; this stub
     raises on purpose so nothing downstream mistakes it for working code.
     """
     raise NotImplementedError("export_keys() is not implemented: RFC 5764 sec. 4.2")

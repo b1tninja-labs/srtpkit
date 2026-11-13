@@ -4,8 +4,12 @@ The format follows Keep a Changelog, and this project adheres to Semantic Versio
 
 ## Unreleased
 
-Nothing yet. This repository is a shell: the public surface exists as typed stubs that raise
-`NotImplementedError`, and [ROADMAP.md](ROADMAP.md) lists what has to happen first.
+- Profile table and negotiation policy, packet index and ROC estimate, replay window, the SRTP key
+  derivation (AES-CM PRF, 128 and 256 bit) with SRTCP labels, AES-CM keystream and crypt, and AES-GCM IV
+  formation, checked against RFC 3711 App. B.2 and B.3, RFC 6188 sec. 7 and RFC 7714 sec. 16 and 17.
+- Runtime dependency `cryptography>=42`. The unused `asn1core` edge is dropped from `docs/plan.md`.
+- Still stubs: `context.for_stream`, `transform.protect` and `unprotect`, `srtcp.protect_rtcp`, `mki.select_key`
+  and `dtls.export_keys` (cut). See [ROADMAP.md](ROADMAP.md).
 
 ## 0.0.0 - 2026-11-05
 

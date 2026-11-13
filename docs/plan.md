@@ -18,17 +18,14 @@ dependency chain.
 
 ## Depends on
 
-- **asn1core** - RFC 5764 key establishment presents certificates, and SRTP keys are only as
-  strong as the identity that negotiated them, so certificate parsing stays in asn1core.
-  **Status: exists as code.** It has source files and a test suite of its own, and its own
-  README states its release status. That it exists does not say it provides what a row here
-  needs: which capability a row consumes is decided row by row.
-
-**Gated by coverage, not by absence.** asn1core now has code and a test suite, so srtpkit is no
-longer waiting for the project to exist. It is still waiting for the structures it needs: a
-roadmap row that parses, encodes or verifies a DER structure cites the asn1core capability it
-consumes, and stays deferred until that capability has a passing test there. No release of
-srtpkit is promised before asn1core has one of its own.
+No sibling project. This section used to name **asn1core**, on the grounds that RFC 5764 key
+establishment presents certificates. It was an unused edge: DTLS-SRTP's certificate handling is the
+DTLS handshake, which this library does not contain, and the SDP fingerprint is a hash over the DER
+bytes, with no parsing. No row in [../ROADMAP.md](../ROADMAP.md) parses, encodes or verifies a DER
+structure, so the edge is dropped, and a row that ever does must cite the asn1core capability it
+consumes before it is started. The one external dependency is the `cryptography` package, for the
+AES block cipher and AES-GCM only (the owner's rule of 2026-11-13: primitives from `cryptography`,
+everything else ours).
 
 ## Sequencing rules
 

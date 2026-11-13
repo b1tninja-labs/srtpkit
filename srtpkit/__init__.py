@@ -6,7 +6,22 @@ separate protocol that Python does not have.
 
 from __future__ import annotations
 
-from . import apps, cli, context, dtls, kdf, mki, params, policy, replay, srtcp, transform
+from . import (
+    aescm,
+    apps,
+    cli,
+    context,
+    dtls,
+    gcm,
+    index,
+    kdf,
+    mki,
+    params,
+    policy,
+    replay,
+    srtcp,
+    transform,
+)
 from .context import for_stream
 from .dtls import export_keys
 from .kdf import derive
@@ -20,6 +35,7 @@ __version__ = "0.1.0"
 
 __all__ = [
     "__version__",
+    "aescm",
     "apps",
     "check",
     "cli",
@@ -28,6 +44,8 @@ __all__ = [
     "dtls",
     "export_keys",
     "for_stream",
+    "gcm",
+    "index",
     "kdf",
     "mki",
     "params",

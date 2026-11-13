@@ -12,7 +12,13 @@ are ordered the way they are, and the rules that order has to respect.
    without touching a socket, so every timeout, retry and rollover is testable without
    sleeping or networking.
 3. **Dependency-free by default.** An exception needs a sentence in README.md explaining why
-   the rule was broken, and a floor with no ceiling.
+   the rule was broken, and a floor with no ceiling. The one exception is `cryptography>=42`, for
+   the AES block cipher (CTR mode under the KDF and the SRTP keystream) and AES-GCM, which the
+   standard library lacks (`hashlib` and `ssl` expose no AES). `cryptography` offers no SRTP and no
+   KDF of this shape, and its HPKE module (47.0.0 and later) is irrelevant here, so the key
+   derivation, the index, the replay window and every wire format stay ours. The earlier optional
+   extra pinned above 50.0.2 is withdrawn: it excluded the installed 46.0.7 and was a floor
+   written as a ceiling.
 4. **Positioning is correctness and legibility, not throughput.** The incumbents in this
    corner are usually stale, untyped, or welded to a product. This is the implementation that
    says how it knows what it claims.

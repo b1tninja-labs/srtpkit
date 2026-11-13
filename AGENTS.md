@@ -54,9 +54,12 @@ rather than merely incomplete.
 3. **Normative text is never paraphrased from memory.** Fetch it with `rfclib` and
    cite the section. If the text you fetch does not say what the obligation claims,
    the obligation is wrong: fix the roadmap row and say so in the commit.
-4. **Dependencies.** `pyproject.toml` here declares no runtime dependencies. Adding a runtime
-   dependency needs a paragraph of justification in `docs/strategy.md` explaining
-   why the standard library is not enough.
+4. **Dependencies.** The one runtime dependency is `cryptography`, for AES (CTR and the block cipher
+   under the KDF) and AES-GCM only (owner rule: primitives from `cryptography`, everything else is
+   ours, including the KDF, the index and replay logic and every wire format). There is no
+   `asn1core` edge: nothing here parses a DER structure. Adding another runtime dependency needs a
+   paragraph of justification in `docs/strategy.md` explaining why the standard library and
+   `cryptography` are not enough.
 5. **Scope.** What is deliberately absent is listed under Non-goals in `README.md`.
    An agent that "helpfully" implements a non-goal has expanded the API surface that
    has to be supported forever.
@@ -64,7 +67,11 @@ rather than merely incomplete.
 ## Read before implementing
 
 - RFC 5764 carries 3 verified errata and is updated by RFC 7983 and RFC 9443, the latter covering multiplexing when QUIC joins the picture.
-- RFC 7714 carries 2 verified errata.
+- RFC 7714 carries 2 verified errata: 4938 (the 96-bit AEAD master salt is widened by 2^16 to 112 bits before the
+  RFC 3711 KDF, applied in `kdf.widen_aead_salt`) and 7858 (sec. 17 misprints its example RTCP packet; the examples
+  use the corrected one, pinned in `tests/test_gcm.py`).
+- RFC 6188 supplies AES-192 and AES-256 counter mode and the `AES_256_CM_PRF` that RFC 7714 sec. 11 requires for
+  AES-256-GCM. RFC 5705 defines the TLS exporter that DTLS-SRTP needs; it is cut (see `ROADMAP.md`).
 - RFC 3711 has 6 errata on file with none verified, and is updated by RFC 5506, RFC 6904 and RFC 9335. Read all three before implementing the transform.
 
 ## Protocol work
