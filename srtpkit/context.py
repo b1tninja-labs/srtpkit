@@ -21,6 +21,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from .hdrext import derive_header_keys
 from .index import IndexState
 from .kdf import SessionKeys, derive_session_keys
 from .params import Profile
@@ -36,18 +37,24 @@ class StreamKeys:
     profile: Profile
     srtp: SessionKeys
     srtcp: SessionKeys
+    header: SessionKeys | None = None  # k_he and k_hs of RFC 6904, when asked for
 
 
-def derive_stream_keys(profile: Profile, master_key: bytes, master_salt: bytes) -> StreamKeys:
+def derive_stream_keys(
+    profile: Profile, master_key: bytes, master_salt: bytes, *, header_extension: bool = False
+) -> StreamKeys:
     """Derive the SRTP and SRTCP session keys from one master key and salt (RFC 3711 sec. 4.3).
 
     A NULL-cipher profile raises ``NotImplementedError`` from the KDF: see
-    ``kdf.derive_session_keys`` and the open question in ROADMAP.md.
+    ``kdf.derive_session_keys`` and the open question in ROADMAP.md. ``header_extension=True`` also
+    derives the RFC 6904 header encryption key and salt (AES-CM profiles only).
     """
+    header = derive_header_keys(profile, master_key, master_salt) if header_extension else None
     return StreamKeys(
         profile,
         derive_session_keys(profile, master_key, master_salt),
         derive_session_keys(profile, master_key, master_salt, srtcp=True),
+        header,
     )
 
 
